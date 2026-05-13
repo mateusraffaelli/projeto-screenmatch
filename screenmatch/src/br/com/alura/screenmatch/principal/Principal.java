@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.principal;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -8,9 +10,7 @@ import java.util.ArrayList;
 
 public class Principal{
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Shrek");
-        meuFilme.setAnoDeLancamento (2001);
+        Filme meuFilme = new Filme("Shrek", 2001);
         meuFilme.setDuracaoEmMinutos(90);
 
 
@@ -21,18 +21,14 @@ public class Principal{
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println("Média de avaliações do filme: " + meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
         System.out.println("Duração para maratonar lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento (2023);
+        Filme outroFilme = new Filme("Avatar", 2023);
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -50,10 +46,8 @@ public class Principal{
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        var filmeMateus = new Filme();
+        var filmeMateus = new Filme("Cidade de Deus", 2002);
         filmeMateus.setDuracaoEmMinutos(200);
-        filmeMateus.setNome("Cidade de Deus");
-        filmeMateus.setAnoDeLancamento(2002);
         filmeMateus.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
